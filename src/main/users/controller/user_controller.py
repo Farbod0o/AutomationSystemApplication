@@ -1,7 +1,6 @@
 from fastapi import APIRouter, Depends
 from src.main.users.schemas.user_schema import UserCreate, UserResponse
 from src.main.users.repositories.user_repository import create_user, get_user_by_id
-
 from src.main.users.models.User import User
 
 router = APIRouter(prefix="/users", tags=["Users"])

@@ -1,7 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from src.main.database.da import Base
-from src.main.organization.models.associations import organization_permission_table
 
 
 class Department(Base):
@@ -15,8 +14,8 @@ class Department(Base):
     description = Column("description",String(100))
     departmentNum= Column("departmentNum",String(100))
     task = Column("task",String(100))
-
-    organization = relationship('Organization',secondary=organization_permission_table,back_populates='departments')
+    organization_id = Column(Integer, ForeignKey('organization.id'))
+    organization = relationship('Organization', back_populates='departments')
 
     def __init__(self,manager,address,name,phoneNum,logo,description,departmentNum,task):
         self.manager = manager
