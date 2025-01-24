@@ -9,5 +9,6 @@ class TicketStatus (Base):
 
     ticket = relationship('Ticket', backref='ticket_status')
 
+
     def __init__(self, statusname):
         self.statusName = statusname

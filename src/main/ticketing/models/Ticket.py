@@ -17,6 +17,7 @@ class Ticket(Base):
     assigned_to = relationship('User', foreign_keys=[assigned_to])
     message = relationship('Message', back_populates='ticket')
 
+
     def __init__(self, title, text, createdBy, assignedTo, dateTime):
         self.title = title
         self.text = text

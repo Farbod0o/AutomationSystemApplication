@@ -12,6 +12,7 @@ class TicketGroup(Base):
 
     parent = relationship('TicketGroup', remote_side=id)
 
+
     def __init__(self, name, parent_id, child_id):
         self.name = name
         self.parent_id = parent_id
