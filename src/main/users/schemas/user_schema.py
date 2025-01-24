@@ -1,4 +1,5 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
+from datetime import datetime
 
 
 class UserCreate(BaseModel):
@@ -8,8 +9,12 @@ class UserCreate(BaseModel):
 
 class UserResponse(BaseModel):
     id: int
-    userName: str
+    username: str
     status: bool
+    lastLogin: datetime | None
 
     class Config:
-        from_attributes = True
+        orm_mode = True
+
+
+
