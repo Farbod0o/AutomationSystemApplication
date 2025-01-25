@@ -10,7 +10,7 @@ class Notification(Base):
     title = Column("title", String(50), nullable=True)
     content = Column("content", String(50), nullable=True)
     notification_type = Column("type", String(50), nullable=True)
-    target_user = Column("target user")
+    target_user = Column("target_user")
     creation_time = Column(DateTime, default=datetime.now)
 
     def __init__(self, title, content, notification_type, target_user, creation_time):
