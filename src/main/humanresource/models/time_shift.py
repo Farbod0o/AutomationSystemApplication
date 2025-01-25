@@ -20,3 +20,4 @@ class TimeShift(Base):
         self.start_time = start_time
         self.end_time = end_time
         self.total_hours = total_hours
+

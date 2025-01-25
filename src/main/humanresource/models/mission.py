@@ -34,3 +34,4 @@ class Mission(Base):
         self.travel_method = travel_method
         self.description = description
         self.accommodation = accommodation
+

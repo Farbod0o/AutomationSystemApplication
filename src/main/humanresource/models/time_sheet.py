@@ -25,3 +25,4 @@ class TimeSheet(Base):
         self.day_of_week = day_of_week
         self.is_absent = is_absent
         self.absence_description = absence_description
+

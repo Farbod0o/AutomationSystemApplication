@@ -21,3 +21,4 @@ class DeductionsAndBonuses(Base):
         self.amount = amount
         self.is_insurance_applicable = is_insurance_applicable
         self.is_tax_applicable = is_tax_applicable
+

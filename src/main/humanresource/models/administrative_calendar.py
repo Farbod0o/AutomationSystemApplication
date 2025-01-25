@@ -25,3 +25,4 @@ class AdministrativeCalendar(Base):
         self.end_time = end_time
         self.day_of_week = day_of_week
         self.is_holiday = is_holiday
+

@@ -28,3 +28,4 @@ class Leave(Base):
         self.status = status
         self.registration_date = registration_date
         self.description = description
+
