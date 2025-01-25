@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from src.main.ticket_priority.app import app
+from src.main.ticketing.app import app
 
 
 client = TestClient(app)
