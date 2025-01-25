@@ -7,4 +7,4 @@ app.include_router(message_route)
 
 @app.get("/")
 def root():
-    return {"message": "welcome to Message Management API"}
+    return {"message": "Welcome to Message Management API"}
