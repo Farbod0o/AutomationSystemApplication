@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from src.main.ticket_status_controller import router as ticket_status_router
+from src.main.ticketing.controller.ticket_status_controller import router as ticket_status_router
 
 app = FastAPI(title="Ticket Status Management API", version="1.0")
 
