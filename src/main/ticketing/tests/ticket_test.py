@@ -14,5 +14,4 @@ def test_create_ticket():
                                               })
     assert response.status_code == 200
 
-
 print("Done")
