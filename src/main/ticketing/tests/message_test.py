@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from src.main.message.app import app
+from src.main.ticketing.message.app import app
 from datetime import datetime
 
 
