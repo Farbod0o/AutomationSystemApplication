@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from src.main.message.controller import route as message_route
+from src.main.ticketing.controller.message_controller import route as message_route
 
 app = FastAPI(title="Message Management API", version="1.0")
 
