@@ -13,8 +13,8 @@ class Ticket(Base):
     _assigned_to = Column(Integer, ForeignKey('user.id'), nullable=False)
     _dateTime = Column(DateTime, nullable=False)
 
-    created_by = relationship('User', foreign_keys=[created_by])
-    assigned_to = relationship('User', foreign_keys=[assigned_to])
+    created_by = relationship('User', foreign_keys=_created_by)
+    assigned_to = relationship('User', foreign_keys=_assigned_to)
     message = relationship('Message', back_populates='ticket')
 
     def __init__(self, title, text, createdBy, assignedTo, dateTime):

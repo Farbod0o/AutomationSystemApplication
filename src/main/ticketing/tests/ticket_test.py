@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
 from datetime import datetime
-from src.main.ticket.app import app
+from src.main.ticketing.ticket_app import app
 
 client = TestClient(app)
 
