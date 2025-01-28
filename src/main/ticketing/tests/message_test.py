@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from src.main.ticketing.app import app
+from src.main.ticketing.message.app import app
 from datetime import datetime
 
 
@@ -13,8 +13,6 @@ def test_create_message():
     assert response.status_code == 200
 
     print("Message created successfully")
-
-
 
 
 
