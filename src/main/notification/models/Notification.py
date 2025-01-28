@@ -9,9 +9,12 @@ class Notification(Base):
     __tablename__ = "notification"
     title = Column("title", String(50), nullable=False)
     content = Column("content", String(50), nullable=False)
-    notification_type = Column("type", enumerate(), nullable=False)
+    notification_type = Column("type", String(50), nullable=False)
     target_user = Column("target_user", String(50), nullable=False)
     creation_time = Column(DateTime, default=datetime.now)
+
+    chat_id = Column(Integer, ForeignKey('chat_id'))
+    chat = relationship("Chat", back_populates="notification")
 
     def __init__(self, title, content, notification_type, target_user, creation_time):
         self.title = title

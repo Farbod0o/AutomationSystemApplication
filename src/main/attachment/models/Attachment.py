@@ -9,10 +9,11 @@ class Attachment(Base):
     __tablename__ = "attachment"
     sent_date= Column("sent_date", datetime, nullable=False)
     sender = Column("sender", String(100), nullable=False)
-    file = Column("file",String(100),  nullable=True)
+    file = Column("file", String(100),  nullable=True)
     file_size= Column("file_size", float(10), nullable=False)
     file_format = Column("file_format", String(100), nullable=False)
 
+    chat = relationship("Chat", uselist=False, back_populates="chat")
 
     def __init__(self, sent_date, sender, file, file_size, file_format):
         self.sent_date = sent_date
