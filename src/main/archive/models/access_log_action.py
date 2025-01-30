@@ -5,6 +5,7 @@ from sqlalchemy.orm import relationship
 
 class AccessLogAction(Base):
     id = Column("id", Integer, primary_key=True)
+    access_log_action_id= Column("id", Integer, primary_key=True)
     actionName = Column("actionName", String(30), nullable=False)
 
     def __init__(self, actionName):
