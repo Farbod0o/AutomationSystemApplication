@@ -6,10 +6,10 @@ from src.main.database.da import Base
 class TimeShift(Base):
     __tablename__ = 'time_shift'
 
-    id = Column(Integer, primary_key=True)
-    start_time = Column(DateTime)
-    end_time = Column(DateTime)
-    total_hours = Column(Integer)
+    _id = Column(Integer, primary_key=True)
+    _start_time = Column(DateTime)
+    _end_time = Column(DateTime)
+    _total_hours = Column(Integer)
 
     administrative_calendar = relationship("AdministrativeCalendar", back_populates="time_shift")
     work_shift = relationship("WorkShift", back_populates="time_shift")

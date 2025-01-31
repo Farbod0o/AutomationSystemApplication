@@ -6,16 +6,17 @@ from src.main.database.da import Base
 class Leave(Base):
     __tablename__ = 'leave'
 
-    id = Column(Integer, primary_key=True)
-    leave_type = Column(String(100))
-    end_time = Column(DateTime)
-    start_date = Column(DateTime)
-    end_date = Column(DateTime)
-    status = Column(Enum("Pending", "Approved", "Rejected"))
-    registration_date = Column(DateTime)
-    description = Column(String(250))
-    time_shift_id = Column(Integer, ForeignKey('time_shift.id'))
-    time_sheet_id = Column(Integer, ForeignKey('time_sheet.id'))
+    _id = Column(Integer, primary_key=True)
+    _leave_type = Column(String(100))
+    _end_time = Column(DateTime)
+    _start_date = Column(DateTime)
+    _end_date = Column(DateTime)
+    _status = Column(Enum("Pending", "Approved", "Rejected"))
+    _registration_date = Column(DateTime)
+    _description = Column(String(250))
+
+    _time_shift_id = Column(Integer, ForeignKey('time_shift.id'))
+    _time_sheet_id = Column(Integer, ForeignKey('time_sheet.id'))
 
     time_shift = relationship("TimeShift", back_populates="leave")
     time_sheet = relationship("TimeSheet", back_populates="leave")
