@@ -1,5 +1,6 @@
-from sqlalchemy import Integer,Column,String, DateTime
+from sqlalchemy import Integer,Column,String, DateTime ,ForeignKey
 from src.main.database.da import Base
+from sqlalchemy.orm import relationship
 
 
 
@@ -10,13 +11,21 @@ class Request(Base):
     _title = Column(String(200),  nullable=False)
     _send_data_time = Column(DateTime, nullable=False)
     _write_data_time = Column(DateTime, nullable=False)
+    _status_id = Column(Integer, ForeignKey('request_status.id'), nullable=False)
+    _priority_id = Column(Integer, ForeignKey('request_priority.id'), nullable=False)
+
+    status = relationship('RequestStatus', backref='requests')
+    priority = relationship('RequestPriority', backref='requests')
 
 
 
-    def __init__(self, _title, _send_data_time, _write_data_time):
+    def __init__(self, _title, _send_data_time, _write_data_time , _status_id ,_priority_id):
         self._title = _title
         self._send_data_time = _send_data_time
         self._write_data_time = _write_data_time
+        self._priority_id = _priority_id
+        self._status_id = _status_id
+
 
 
     def __repr__(self):
