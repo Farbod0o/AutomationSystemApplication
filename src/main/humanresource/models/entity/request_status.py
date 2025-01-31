@@ -4,13 +4,13 @@ from sqlalchemy import Column, Integer, String
 
 class Requeststatus(Base):
     __tablename__ = "request_status"
-    id = Column(Integer, primary_key=True , autoincrement=True)
-    status = Column(String(50), nullable=False)
+    _id = Column(Integer, primary_key=True , autoincrement=True)
+    _status = Column(String(50), nullable=False)
 
 
-    def __init__(self , status):
-        self.status = status
+    def __init__(self , _status):
+        self._status = _status
 
 
     def __repr__(self):
-        return f"<RequestStatus(id={self.id}, status='{self.status}')>"
+        return f"<RequestStatus(id={self._id}, status='{self._status}')>"
