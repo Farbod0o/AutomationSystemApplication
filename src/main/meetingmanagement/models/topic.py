@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String
 from src.main.database.da import Base
-from projectlist import *
+
 
 class Topic(Base):
     __tablename__ = 'topic'
