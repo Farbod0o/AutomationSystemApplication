@@ -4,6 +4,7 @@ from src.main.database.da import Base
 
 class SectionList(Base):
     __tablename__ = 'sectionlist'
+    id = Column("id",Integer, primary_key=True)
     listname = Column("listname",String, primary_key=True)
     sections = relationship("section",backref="sectionlist")
 

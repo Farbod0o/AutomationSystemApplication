@@ -4,7 +4,7 @@ from projectlist import *
 
 class Topic(Base):
     __tablename__ = 'topic'
-    id = Column(Integer, primary_key=True)
+    id = Column("id",Integer, primary_key=True)
     name = Column("name",String(30))
     description = Column("description",String(100))
     urgency=Column("urgent",String(30))

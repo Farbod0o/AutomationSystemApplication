@@ -12,16 +12,16 @@ class MeetingStatus(enum.Enum):
 class Meeting(Base):
     __tablename__ = 'meeting'
 
-    id = Column(Integer, primary_key=True)
-    date = Column(Date, nullable=False)
-    day_of_week = Column(String(20), nullable=False)
-    location = Column(String(100), nullable=False)
-    meeting_manager = Column(String(50), nullable=False)
-    start_time = Column(Time, nullable=False)
-    end_time = Column(Time, nullable=False)
-    title = Column(String(100), nullable=False)
-    status = Column(Enum(MeetingStatus), nullable=False)
-    description = Column(String(255), nullable=True)
+    id = Column("id",Integer, primary_key=True)
+    date = Column("date",Date, nullable=False)
+    day_of_week = Column("day_of_week",String(20), nullable=False)
+    location = Column("location",String(100), nullable=False)
+    meeting_manager = Column("meeting_manager",String(50), nullable=False)
+    start_time = Column("start_time",Time, nullable=False)
+    end_time = Column("end_time",Time, nullable=False)
+    title = Column("title",String(100), nullable=False)
+    status = Column("status",Enum(MeetingStatus), nullable=False)
+    description = Column("description",String(255))
 
     def __init__(self, date, day_of_week, location, meeting_manager, start_time, end_time, title, status, description=""):
         self.date = date

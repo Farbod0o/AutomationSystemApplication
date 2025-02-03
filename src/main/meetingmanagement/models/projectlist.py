@@ -4,7 +4,7 @@ from src.main.database.da import Base
 
 class Projectlist(Base):
     __tablename__ = 'project_list'
-    id = Column(String, primary_key=True)
+    id = Column("id",String, primary_key=True)
     project_name = Column("projectname",String(30), primary_key=True)
     projects=relationship("Project",backref="Projectlist")
 
