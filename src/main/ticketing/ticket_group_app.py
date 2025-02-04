@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from src.main.ticketing.controller.ticket_group_controller import router as ticket_group_router
+from src.main.ticketing.controller.ticket_group_controller import route as ticket_group_route
 
 app = FastAPI(title="Ticket Group Management API", version="1.0")
 

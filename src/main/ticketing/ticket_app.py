@@ -1,9 +1,9 @@
 from fastapi import FastAPI
-from src.main.ticketing.controller.ticket_controller import router as ticket_router
+from src.main.ticketing.controller.ticket_controller import route as ticket_route
 
 app = FastAPI(title="Ticket Management API", version="1.0")
 
-app.include_router(ticket_router)
+app.include_route(ticket_route)
 
 
 @app.get("/")
