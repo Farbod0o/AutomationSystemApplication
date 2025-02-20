@@ -14,7 +14,7 @@ class UserResponse(BaseModel):
     lastLogin: datetime | None
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 
