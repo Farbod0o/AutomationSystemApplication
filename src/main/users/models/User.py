@@ -16,9 +16,9 @@ class User(Base):
     person = relationship("Person", back_populates="user")
     roles = relationship("Role", secondary=user_role_table, back_populates="users")
 
-    def __init__(self, username, password, status=True):
+    def __init__(self, username, password,person_id, status=True):
         self.username = username
         self.password = password
         self.status = status
-        # self.person_id = person_id
+        self.person_id = person_id
 
