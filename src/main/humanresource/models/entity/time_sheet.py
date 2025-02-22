@@ -6,13 +6,13 @@ from src.main.database.da import Base
 class TimeSheet(Base):
     __tablename__ = 'time_sheet'
 
-    id = Column(Integer, primary_key=True)
-    entry_time = Column(DateTime)
-    exit_time = Column(DateTime)
-    date = Column(DateTime)
-    day_of_week = Column(String(100))
-    is_absent = Column(Boolean, default=False)
-    absence_description = Column(String(300))
+    _id = Column(Integer, primary_key=True)
+    _entry_time = Column(DateTime)
+    _exit_time = Column(DateTime)
+    _date = Column(DateTime)
+    _day_of_week = Column(String(100))
+    _is_absent = Column(Boolean, default=False)
+    _absence_description = Column(String(300))
 
     administrative_calendar = relationship('AdministrativeCalendar', back_populates='time_sheet')
     leave = relationship('Leave', back_populates='time_sheet')
@@ -26,3 +26,4 @@ class TimeSheet(Base):
         self.is_absent = is_absent
         self.absence_description = absence_description
 
+_

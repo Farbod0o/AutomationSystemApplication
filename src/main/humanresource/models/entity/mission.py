@@ -5,20 +5,20 @@ from src.main.database.da import Base
 
 class Mission(Base):
     __tablename__ = 'mission'
-    id = Column(Integer, primary_key=True)
-    extended_time = Column(DateTime)
-    origin = Column(String(100))
-    destination = Column(String(100))
-    start_date = Column(DateTime)
-    end_date = Column(DateTime)
-    distance = Column(Integer)
-    request_date = Column(DateTime)
-    travel_method = Column(String(100))
-    description = Column(String(300))
-    accommodation = Column(String(300))
+    _id = Column(Integer, primary_key=True)
+    _extended_time = Column(DateTime)
+    _origin = Column(String(100))
+    _destination = Column(String(100))
+    _start_date = Column(DateTime)
+    _end_date = Column(DateTime)
+    _distance = Column(Integer)
+    _request_date = Column(DateTime)
+    _travel_method = Column(String(100))
+    _description = Column(String(300))
+    _accommodation = Column(String(300))
 
-    time_sheet_id = Column(Integer, ForeignKey('time_sheet.id'))
-    time_shift_id = Column(Integer, ForeignKey('time_shift.id'))
+    _time_sheet_id = Column(Integer, ForeignKey('time_sheet.id'))
+    _time_shift_id = Column(Integer, ForeignKey('time_shift.id'))
 
     time_sheet = relationship("TimeSheet", back_populates="mission")
     time_shift = relationship("TimeShift", back_populates="mission")
