@@ -10,7 +10,6 @@ class PersonCreate(BaseModel):
     email: Optional[EmailStr] = Field(None, max_length=100)
     address: Optional[str] = Field(None, max_length=255)
 
-
 class PersonResponse(BaseModel):
     id: int
     name: str

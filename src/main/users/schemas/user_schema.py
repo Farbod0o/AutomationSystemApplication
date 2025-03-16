@@ -8,7 +8,6 @@ class UserCreate(BaseModel):
     password: str = Field(..., min_length=6, regex=PASSWORD_REGEX)
     person_id: int
 
-
 class UserResponse(BaseModel):
     id: int
     username: str
