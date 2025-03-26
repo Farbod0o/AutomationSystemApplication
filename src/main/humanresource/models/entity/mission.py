@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean, Enum, DateTime, ForeignKey
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from src.main.database.da import Base
 
@@ -8,7 +8,6 @@ class Mission(Base):
     _id = Column(Integer, primary_key=True)
     _extended_time = Column(DateTime)
     _origin = Column(String(100))
-    _destination = Column(String(100))
     _start_date = Column(DateTime)
     _end_date = Column(DateTime)
     _distance = Column(Integer)
@@ -23,10 +22,9 @@ class Mission(Base):
     time_sheet = relationship("TimeSheet", back_populates="mission")
     time_shift = relationship("TimeShift", back_populates="mission")
 
-    def __init__(self, extended_time, origin, destination, start_date, end_date, distance, request_date, travel_method, description, accommodation):
+    def __init__(self, extended_time, origin, start_date, end_date, distance, request_date, travel_method, description, accommodation):
         self.extended_time = extended_time
         self.origin = origin
-        self.destination = destination
         self.start_date = start_date
         self.end_date = end_date
         self.distance = distance
