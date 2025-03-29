@@ -6,11 +6,10 @@ class TimeShiftCreate(BaseModel):
     total_hours: int = Field(..., max_length=5)
 
 
-class TimeShiftResponse(BaseModel):
+class TimeShiftResponse(TimeShiftCreate):
     id: int
     start_time: datetime | None
     end_time: datetime | None
-    total_hours: int
 
     class Config:
         from_attributes = True

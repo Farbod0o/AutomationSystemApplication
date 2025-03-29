@@ -6,11 +6,9 @@ class WorkShiftSchemaCreate(BaseModel):
     time_shift_id: int
 
 
-class WorkShiftSchemaResponse(BaseModel):
+class WorkShiftSchemaResponse(WorkShiftSchemaCreate):
     id: int
-    name: str
     status: bool
-    time_shift_id: int
 
     class Config:
         from_attributes = True

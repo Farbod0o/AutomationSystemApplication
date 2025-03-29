@@ -12,19 +12,12 @@ class MissionCreate(BaseModel):
     time_shift_id = int
 
 
-class MissionResponse(BaseModel):
+class MissionResponse(MissionCreate):
     id: int
     extended_time: datetime | None
-    origin: str
     start_date: datetime | None
     end_date: datetime | None
-    distance: int
     request_date: datetime | None
-    travel_method: str
-    description: str
-    accommodation: str
-    time_sheet_id = int
-    time_shift_id = int
 
     class Config:
         from_attributes = True
