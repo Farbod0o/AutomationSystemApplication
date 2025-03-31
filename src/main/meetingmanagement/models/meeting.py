@@ -2,6 +2,8 @@ from sqlalchemy import Column, Integer, String, Date, Time, Enum
 from sqlalchemy.ext.declarative import declarative_base
 import enum
 
+from sqlalchemy.orm import relationship
+
 Base = declarative_base()
 
 class MeetingStatus(enum.Enum):
@@ -22,6 +24,8 @@ class Meeting(Base):
     title = Column("title",String(100), nullable=False)
     status = Column("status",Enum(MeetingStatus), nullable=False)
     description = Column("description",String(255))
+
+    sectionList = relationship("sectionList",back_populates="meeting")
 
     def __init__(self, date, day_of_week, location, meeting_manager, start_time, end_time, title, status, description=""):
         self.date = date
