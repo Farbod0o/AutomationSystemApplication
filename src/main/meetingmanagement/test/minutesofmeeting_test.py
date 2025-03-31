@@ -1,4 +1,4 @@
-from src.main.meetingmanagement.models.minutesofmetting import  MinutesOfMetting
+from src.main.meetingmanagement.models.minutesofmeeting import  MinutesOfMetting
 
 
 minutes = MinutesOfMetting("hasan",20,"nothing",

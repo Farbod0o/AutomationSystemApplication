@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Date, Time, Enum
+from sqlalchemy import Column, Integer, String, Date, Time, Enum, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 import enum
 
@@ -27,7 +27,11 @@ class Meeting(Base):
 
     sectionList = relationship("sectionList",back_populates="meeting")
 
-    def __init__(self, date, day_of_week, location, meeting_manager, start_time, end_time, title, status, description=""):
+    minutesofmeeting_id = Column(Integer, ForeignKey('minutesofmeeting.id'))
+    minutesofmeeting = relationship("MinutesOfMeeting")
+
+    def __init__(self, date, day_of_week, location, meeting_manager,
+                 start_time, end_time, title, status, description ,minutesofmeeting_id):
         self.date = date
         self.day_of_week = day_of_week
         self.location = location
@@ -37,6 +41,7 @@ class Meeting(Base):
         self.title = title
         self.status = status
         self.description = description
+        self.minutesofmeeting_id = minutesofmeeting_id
 
     def __str__(self):
         return f"Meeting (Title: {self.title}, Date: {self.date}, Status: {self.status.value})"

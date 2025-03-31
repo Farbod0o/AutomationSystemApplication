@@ -1,9 +1,11 @@
 from sqlalchemy import Column, Integer, String, Date, column
+from sqlalchemy.orm import relationship
+
 from src.main.database.da import Base
 
 
-class MinutesOfMetting(Base):
-    __tablename__ = 'Minutes_Of_Metting'
+class MinutesOfMeeting(Base):
+    __tablename__ = 'Minutes_Of_Meeting'
     id = Column(Integer, primary_key=True)
     author = Column("author",String(30),nullable=False)
     date = Column("date",Date,nullable=False)
@@ -12,6 +14,9 @@ class MinutesOfMetting(Base):
     invitee_list=Column("invitee_list",String(255),nullable=True)
     follow_up_list=Column("follow_up_list",String(255),nullable=True)
     approver_list=Column("approve_list",String(255),nullable=True)
+
+    personlist = relationship('personlist', back_populates='minutesofmeeting')
+    meeting = relationship('meeting', back_populates='minutesofmeeting')
 
 
     def __init__(self, author, date, description, attendee_list, invitee_list, follow_up_list,approver_list):
