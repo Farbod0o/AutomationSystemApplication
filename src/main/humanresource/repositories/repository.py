@@ -22,3 +22,9 @@ class Repository:
     def delete(entity, id):
         entity_da = DataAccess(entity)
         entity_da.remove(id)
+
+    @staticmethod
+    def update(obj, entity):
+        entity_da = DataAccess(entity)
+        entity_da.update(obj)
+        return obj
