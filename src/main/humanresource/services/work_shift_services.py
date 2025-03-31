@@ -1,3 +1,4 @@
+
 from src.main.humanresource.models.entity.work_shift import WorkShift
 from src.main.humanresource.repositories.repository import Repository
 
@@ -18,4 +19,8 @@ def get_all_work_shifts():
 def delete_work_shift(id):
     Repository.delete(WorkShift, id)
     return True, f"work shift with id {id} deleted successfully."
+
+
+def update_work_shift(data):
+    return True, Repository.update(data, WorkShift)
 
