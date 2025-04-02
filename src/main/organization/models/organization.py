@@ -8,7 +8,7 @@ class Organization(Base):
     id = Column(Integer, primary_key=True)
     manager = Column("manager", String(100))
     address = Column("address", String(100))
-    name = Column("name", String(100))
+    name = Column("name" , String(100))
     phoneNum = Column("phoneNum", String(100))
     logo = Column("log", String(100))
     description = Column("description", String(100))

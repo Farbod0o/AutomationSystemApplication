@@ -6,7 +6,7 @@ class OrganizationCreate(BaseModel):
     manager: str = Field(..., max_length=50)
     name: str = Field(..., max_length=50)
     address: str = Field(..., max_length=100)
-    phoneNum: str = Field(..., pattern= PHONE_REGEX)
+    phoneNum: str = Field(..., pattern=PHONE_REGEX)
     logo: str = Field(..., max_length=50)
     task: str = Field(..., max_length=50)
     departmentNum: str = Field(..., max_length=50)

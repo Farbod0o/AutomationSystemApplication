@@ -8,7 +8,7 @@ router = APIRouter(prefix="/departments", tags=["Departments"])
 
 
 @router.post("/", response_model=DepartmentResponse)
-def create_new_department(department: DepartmentCreate):
+def create_new_department(department : DepartmentCreate):
     new_department = (Department
         (
         manager=department.manager,

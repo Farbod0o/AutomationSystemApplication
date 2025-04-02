@@ -3,7 +3,7 @@ from src.main.organization.repositories.repository import Repository
 
 
 def create_department(department_data):
-    return True, Repository.save(department_data , Department)
+    return True, Repository.save(department_data, Department)
 
 def get_department_by_id(id):
     return True, Repository.find_by_id(Department, id)

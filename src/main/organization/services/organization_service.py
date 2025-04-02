@@ -6,7 +6,7 @@ def create_organization(organization_data):
     return True, Repository.save(organization_data, Organization)
 
 def get_organization_by_id(id):
-    return True, Repository.find_by_id(Organization , id)
+    return True, Repository.find_by_id(Organization, id)
 
 def update_organization(organization_data):
     return True, Repository.update(organization_data, Organization)
