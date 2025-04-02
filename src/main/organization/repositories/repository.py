@@ -1,6 +1,5 @@
 from src.main.database.da import DataAccess
 
-
 class Repository:
     @staticmethod
     def save(obj, entity):
@@ -16,7 +15,7 @@ class Repository:
     @staticmethod
     def delete(entity, id):
         entity_da = DataAccess(entity)
-        entity_da.delete(id)
+        return entity_da.delete(id)
 
 
     @staticmethod

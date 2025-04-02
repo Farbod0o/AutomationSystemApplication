@@ -24,5 +24,5 @@ def create_new_organization(organization: OrganizationCreate):
 
 
 @router.get("/{organization_id}", response_model=OrganizationResponse)
-def read_organization(organization_id: int):
+def read_organization(organization_id: int ):
     return get_organization_by_id(organization_id)

@@ -15,9 +15,9 @@ class Organization(Base):
     departmentNum = Column("departmentNum", String(100))
     task = Column("task", String(100))
 
-    departments = relationship('Department', back_populates='organization')
+    departments = relationship('Department', back_populates ='organization')
 
-    def __init__(self,manager,address,name,phoneNum,logo,description,departmentNum,task):
+    def __init__(self, manager, address, name, phoneNum, logo, description, departmentNum, task):
         self.manager = manager
         self.address = address
         self.name = name

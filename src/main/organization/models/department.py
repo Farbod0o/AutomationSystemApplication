@@ -18,7 +18,7 @@ class Department(Base):
     organization_id = Column(Integer, ForeignKey('organization.id'))
     organization = relationship('Organization', back_populates='departments')
 
-    section = relationship('Section', back_populates='departments')
+    section = relationship('Section', back_populates ='departments')
 
 
     def __init__(self,manager,address,name,phoneNum,logo,description,departmentNum,task):
