@@ -15,7 +15,7 @@ class Repository:
     @staticmethod
     def delete(entity, id):
         entity_da = DataAccess(entity)
-        return entity_da.delete(id)
+        entity_da.delete(id)
 
 
     @staticmethod
