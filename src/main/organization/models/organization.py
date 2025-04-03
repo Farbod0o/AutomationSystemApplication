@@ -5,22 +5,24 @@ from src.main.database.da import Base
 
 class Organization(Base):
     __tablename__ = 'organization'
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    manager = Column(String(50))
-    address = Column(String(100))
-    phoneNum = Column(String(50))
-    logo = Column(String(50))
-    task = Column(String(50))
-    departmentNum = Column(String(50))
-    description = Column(String(100))
+    id = Column(Integer, primary_key=True)
+    manager = Column("manager", String(100))
+    address = Column("address", String(100))
+    name = Column("name" , String(100))
+    phoneNum = Column("phoneNum", String(100))
+    logo = Column("log", String(100))
+    description = Column("description", String(100))
+    departmentNum = Column("departmentNum", String(100))
+    task = Column("task", String(100))
 
-    departments = relationship('Department', back_populates='organization')
+    departments = relationship('Department', back_populates ='organization')
 
-    def __init__(self, manager, address, phoneNum, logo, task, departmentNum, description=None):
+    def __init__(self, manager, address, name, phoneNum, logo, description, departmentNum, task):
         self.manager = manager
         self.address = address
+        self.name = name
         self.phoneNum = phoneNum
         self.logo = logo
-        self.task = task
-        self.departmentNum = departmentNum
         self.description = description
+        self.departmentNum = departmentNum
+        self.task = task

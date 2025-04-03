@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter
 from fastapi.encoders import jsonable_encoder
 from src.main.organization.schemas.section_schema import SectionCreate,SectionResponse
 from src.main.organization.services.section_service import create_section, get_section_by_id

@@ -1,6 +1,5 @@
 from src.main.database.da import DataAccess
 
-
 class Repository:
     @staticmethod
     def save(obj, entity):

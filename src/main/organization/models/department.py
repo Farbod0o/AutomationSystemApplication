@@ -5,7 +5,7 @@ from src.main.database.da import Base
 
 class Department(Base):
     __tablename__ = 'department'
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer , primary_key=True)
     manager = Column("manager",String(100))
     address = Column("address",String(100))
     name = Column("name",String(100))
@@ -18,7 +18,7 @@ class Department(Base):
     organization_id = Column(Integer, ForeignKey('organization.id'))
     organization = relationship('Organization', back_populates='departments')
 
-    section = relationship('Section', back_populates='departments')
+    section = relationship('Section', back_populates ='departments')
 
 
     def __init__(self,manager,address,name,phoneNum,logo,description,departmentNum,task):
