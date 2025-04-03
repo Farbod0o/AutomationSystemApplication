@@ -1,12 +1,12 @@
 from pydantic import BaseModel, Field
 
 
-class WorkShiftSchemaCreate(BaseModel):
+class WorkShiftCreate(BaseModel):
     name: str = Field(..., max_lenght=100)
     time_shift_id: int
 
 
-class WorkShiftSchemaResponse(WorkShiftSchemaCreate):
+class WorkShiftResponse(WorkShiftCreate):
     id: int
     status: bool
 
