@@ -8,6 +8,7 @@ class Projectlist(Base):
     project_name = Column("projectname",String(30), primary_key=True)
     projects=relationship("Project",backref="Projectlist")
 
-    def __init__(self, project_name,projects):
+    def __init__(self, project_name, projects=None):
         self.project_name = project_name
-        self.projects =[projects]
+        self.projects = projects if projects is not None else [] #برای در امان مونذن ارور خطا
+
