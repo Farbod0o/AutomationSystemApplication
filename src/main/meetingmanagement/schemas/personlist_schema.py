@@ -1,9 +1,8 @@
 from pydantic import BaseModel, Field
-from src.validators.regex_patterns import USERNAME_REGEX
 
 
 class PersonListCreate(BaseModel):
-    listName: str = Field(...,regex=USERNAME_REGEX)
+    listName: str = Field(...,max_length=100)
     minutesofmeeting_id: int
 
 class PersonListResponse(BaseModel):

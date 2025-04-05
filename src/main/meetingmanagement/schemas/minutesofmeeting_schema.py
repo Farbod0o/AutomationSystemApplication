@@ -1,15 +1,14 @@
 from pydantic import BaseModel, Field
-from src.validators.regex_patterns import USERNAME_REGEX
 
 
 class MinutesOfMeetingCreate(BaseModel):
-    author: str = Field(...,regex=USERNAME_REGEX)
-    date: str = Field(..., regex=USERNAME_REGEX)
-    description: str = Field(..., regex=USERNAME_REGEX)
-    attendee_list: str = Field(..., regex=USERNAME_REGEX)
-    invitee_list: str = Field(..., regex=USERNAME_REGEX)
-    follow_up_list: str = Field(..., regex=USERNAME_REGEX)
-    approver_list: str = Field(..., regex=USERNAME_REGEX)
+    author: str = Field(...,max_length=50)
+    date: str = Field(..., max_length=50)
+    description: str = Field(..., max_length=50)
+    attendee_list: str = Field(..., max_length=50)
+    invitee_list: str = Field(..., max_length=50)
+    follow_up_list: str = Field(..., max_length=50)
+    approver_list: str = Field(..., max_length=50)
 
 
 class MinutesOfMeetingResponse(BaseModel):

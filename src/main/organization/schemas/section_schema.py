@@ -1,17 +1,17 @@
 from pydantic import BaseModel, Field
-from src.validators.regex_patterns import USERNAME_REGEX
+from src.validators.regex_patterns import PHONE_REGEX
 
 
 class SectionCreate(BaseModel):
-    head: str = Field(...,regex=USERNAME_REGEX)
-    address: str = Field(..., regex=USERNAME_REGEX)
-    name: str = Field(...,regex=USERNAME_REGEX)
-    phoneNum: str = Field(...,regex=USERNAME_REGEX)
-    internalCode: str = Field(..., regex=USERNAME_REGEX)
-    description: str = Field(..., regex=USERNAME_REGEX)
-    sectionNum: str = Field(..., regex=USERNAME_REGEX)
-    accessLevel: str = Field(..., regex=USERNAME_REGEX)
-    higherLevelSectionNum: str = Field(..., regex=USERNAME_REGEX)
+    head: str = Field(...,max_length=30)
+    address: str = Field(..., max_length=50)
+    name: str = Field(...,max_length=30)
+    phoneNum: str = Field(...,pattern=PHONE_REGEX)
+    internalCode: str = Field(..., max_length=50)
+    description: str = Field(None , max_length=225)
+    sectionNum: str = Field(..., max_length=50)
+    accessLevel: str = Field(..., max_length=50)
+    higherLevelSectionNum: str = Field(..., max_length=50)
     department_id : int
 
 class SectionResponse(BaseModel):

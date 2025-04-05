@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter
 from fastapi.encoders import jsonable_encoder
 from src.main.meetingmanagement.schemas.minutesofmeeting_schema import MinutesOfMeetingCreate, MinutesOfMeetingResponse
 from src.main.meetingmanagement.services.minutesofmeeting_service import create_MinutesOfMeeting, get_MinutesOfMeeting_by_id
