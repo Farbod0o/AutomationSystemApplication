@@ -21,5 +21,4 @@ def __init__(self, send_date, sender, text):
     self._sender = sender
     self._text = text
 
-def __repr__(self):
-    return f"<Message(id={self.id}, send_date='{self.send_date}', sender='{self.sender}', text='{self.text}')>', " \
+
