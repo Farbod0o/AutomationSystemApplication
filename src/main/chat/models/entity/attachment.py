@@ -5,7 +5,7 @@ from src.main.database.da import Base
 
 
 class Attachment(Base):
-    __tablename__ = "attachment_tbl"
+    __tablename__ = "attachments"
 
     attachment_id = Column(Integer, primary_key=True, autoincrement=True)
     sent_date = Column("sent_date", datetime, nullable=False)
@@ -15,7 +15,7 @@ class Attachment(Base):
     file_format = Column("file_format", String(100), nullable=False)
 
     chat_id = Column(Integer, ForeignKey('chat_id'))
-    chat = relationship("Chat", uselist=False, back_populates="attachment_tbl")
+    chat = relationship("Chat", uselist=False, back_populates="attachments")
 
     def __init__(self, sent_date, sender, file, file_size, file_format):
         self.sent_date = sent_date
