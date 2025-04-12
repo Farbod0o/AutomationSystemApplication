@@ -1,4 +1,4 @@
-from model.entity import *
+from src.main.humanresource.models.entity import *
 
 
 class Loan(Base):
