@@ -9,7 +9,7 @@ class Attachment(Base):
 
     attachment_id = Column(Integer, primary_key=True, autoincrement=True)
     sent_date = Column("sent_date", datetime, nullable=False)
-    sender = Column("sender", String(100), nullable=False)
+    sender = Column("sender", Integer, ForeignKey("users.id"), nullable=False)
     file = Column("file", String(100), nullable=True)
     file_size = Column("file_size", float(4), nullable=False)
     file_format = Column("file_format", String(100), nullable=False)
