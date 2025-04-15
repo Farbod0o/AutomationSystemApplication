@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from fastapi.encoders import jsonable_encoder
 from src.main.meetingmanagement.models.projectlist import Projectlist
 from src.main.meetingmanagement.schemas.projectlist_schema import ProjectlistCreate, ProjectlistResponse
@@ -15,7 +15,8 @@ def create_new_projectlist(projectlist: ProjectlistCreate):
         projects=None
     )
     projectlist_data = jsonable_encoder(create_projectlist(new_projectlist)[1])
-    return ProjectlistResponse(**projectlist_data)
+    projectlist_response = ProjectlistResponse(**projectlist_data)
+    return projectlist_response
 
 
 @router.get("/{projectlist_id}", response_model=ProjectlistResponse)
