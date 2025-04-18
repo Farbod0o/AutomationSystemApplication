@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from fastapi.encoders import jsonable_encoder
 from src.main.meetingmanagement.models.topic import Topic
 from src.main.meetingmanagement.schemas.topic_schema import TopicCreate, TopicResponse
@@ -15,7 +15,8 @@ def create_new_topic(topic: TopicCreate):
         urgency=topic.urgency
     )
     topic_data = jsonable_encoder(create_topic(new_topic)[1])
-    return TopicResponse(**topic_data)
+    topic_response = TopicResponse(**topic_data)
+    return topic_response
 
 
 @router.get("/{topic_id}", response_model=TopicResponse)

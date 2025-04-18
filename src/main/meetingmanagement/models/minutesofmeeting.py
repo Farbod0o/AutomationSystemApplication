@@ -31,4 +31,3 @@ class MinutesOfMeeting(Base):
 
     def __str__(self):
         return f"MinutesOfMeeting(Author : {self.author}, Date: {self.date}, Description: {self.description})"
-

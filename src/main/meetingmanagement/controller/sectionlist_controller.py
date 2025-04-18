@@ -9,10 +9,11 @@ router = APIRouter(prefix="/sectionList", tags=["SectionLists"])
 
 @router.post("/", response_model=SectionListResponse)
 def create_new_sectionList(sectionList: SectionListCreate):
-    new_sectionList = SectionList(listName=sectionList.listName)
-    sectionList_data = jsonable_encoder(create_sectionList(new_sectionList)[1])
-    sectionList_response = SectionListResponse(**sectionList_data)
-    return sectionList_response
+    new_sectionList = SectionList(
+        listName=sectionList.listName
+    )
+    created = create_sectionList(new_sectionList)[1]
+    return SectionListResponse(**jsonable_encoder(created))
 
 
 @router.get("/{sectionList_id}", response_model=SectionListResponse)

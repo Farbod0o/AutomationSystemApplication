@@ -9,7 +9,7 @@ class Message(Base):
 
     message_id = Column("id", Integer, primary_key=True, autoincrement=True)
     send_date = Column("SendDate", DateTime)
-    sender = Column("Sender", String(30))
+    sender = Column("Sender", Integer, ForeignKey("users.id"), nullable=False)
     text = Column("Text", String(50))
 
     notification = relationship("Notification", uselist=False, back_populates="messages")

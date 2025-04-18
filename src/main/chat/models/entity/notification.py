@@ -2,16 +2,22 @@ from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from src.main.database.da import Base
+from enum import Enum as PyEnum, Enum
 
+
+class NotifType(PyEnum):
+    MESSAGE = "Message"
+    REMINDER = "Reminder"
+    ALERT = "Alert"
 
 class Notification(Base):
-    __tablename__ = "notificatios"
+    __tablename__ = "notifications"
 
     notification_id = Column("notificatin_ID", Integer, primary_key=True,autoincrement=True)
     title = Column("title", String(50), nullable=False)
     content = Column("content", String(50), nullable=False)
-    notification_type = Column("type", String(50), nullable=False)
-    target_user = Column("target_user", String(50), nullable=False)
+    notification_type = Column("notification_type", Enum(NotifType), nullable=False, default=NotifType.MESSAGE)
+    target_user = Column("target_user", Integer, ForeignKey("users.id"), nullable=False)
     creation_time = Column(DateTime, default=datetime.now)
 
     chat_id = Column(Integer, ForeignKey("chat_id"))
